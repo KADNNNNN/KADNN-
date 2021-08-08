@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 1.a:link 选择没有访问过（点击过）的链接*/
+      a:link {
+        color: #333;
+        text-decoration: none;
+      }
+      /* 2. a:visited 选择访问过（ 点击过）的链接 */
+      a:visited {
+        color: orange;
+      }
+      /* 3. a:hover 选择鼠标经过的链接 */
+      a:hover {
+        color: blue;
+      }
+      /* 4. a:active 选择鼠标正在点击还没有放开的链接 */
+      a:active {
+        color: chartreuse;
+      }
+      /* :focus伪类选择器 选择光标选中的表单元素 */
+      input:focus {
+        background-color: rgba(139, 236, 253, 0.76);
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="#">链接</a><br />
+    <input type="text" />
+    <input type="text" />
+    <input type="text" />
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>盒子模型</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      div:nth-child(1) {
+        height: 100px;
+        width: 100px;
+        border: 10px red solid;
+        margin: 10px auto;
+        box-sizing: border-box;
+      }
+      div:nth-child(2) {
+        height: 100px;
+        width: 100px;
+        border: 10px red solid;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div>大聪明</div>
+    <div>大聪明</div>
+    <div>大聪明</div>
+  </body>
+</html>

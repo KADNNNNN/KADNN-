@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>常见网页布局（小米式</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .top {
+        height: 50px;
+        background-color: gray;
+      }
+      .banner {
+        width: 1226px;
+        height: 400px;
+        background-color: gray;
+        margin: 10px auto;
+      }
+      .box1,
+      .box2 {
+        width: 1226px;
+        height: 300px;
+        background-color: gray;
+        margin: 0px auto 10px;
+      }
+      .footer {
+        height: 100px;
+        background-color: gray;
+      }
+      .box1 ur li,
+      .box2 ur li {
+        width: 299px;
+        height: 300px;
+        background-color: rgb(219, 164, 164);
+        float: left;
+        list-style: none;
+        margin-right: 10px;
+      }
+      .box1 ur .last,
+      .box2 ur .last {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">top</div>
+    <div class="banner">banner</div>
+    <div class="box1">
+      <ur>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+      </ur>
+    </div>
+    <div class="box2">
+      <ur>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li class="last">4</li>
+      </ur>
+    </div>
+    <div class="footer">footer</div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>圆角矩形</title>
+    <style>
+      div {
+        background-color: pink;
+        width: 100px;
+        height: 100px;
+        margin: auto 50px;
+        text-align: center;
+      }
+      .box1 {
+        border-radius: 10px;
+      }
+      .box2 {
+        border-radius: 0px 20px 20px 0px;
+        /* 右上 右下 左下 左上 */
+      }
+      .box3 {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    圆角统一:
+    <div class="box1"></div>
+    分别设置圆角:
+    <div class="box2"></div>
+    用百分比设置圆角:
+    <div class="box3"></div>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 字体声明 */
+      @font-face {
+        font-family: "iconfont";
+        src: url("../fonts/阿里/iconfont.ttf") format("truetype");
+      }
+      div {
+        position: relative;
+        width: 490px;
+        height: 270px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      div::after {
+        content: "\e6b3";
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 490px;
+        height: 270px;
+        background-color: rgba(0, 0, 0, 0.4);
+        line-height: 270px;
+        text-align: center;
+        font-family: "iconfont";
+        font-size: 50px;
+        color: orangered;
+      }
+      div:hover::after {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="../CSS学习/image/土豆网.jpg" alt="" />
+    </div>
+  </body>
+</html>

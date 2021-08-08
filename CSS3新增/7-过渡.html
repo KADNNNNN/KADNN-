@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>过渡做动画效果</title>
+    <style>
+      body > div:nth-child(1) {
+        height: 100px;
+        width: 100px;
+        background-color: gray;
+        box-sizing: border-box;
+        /* transition: width 0.5s ease, height 0.5s ease; */
+        transition: all ease 0.5s;
+      }
+      /* div:nth-child(1):hover {
+        width: 200px;
+        height: 200px;
+        border: solid orange 20px;
+        background-color: skyblue;
+      } */
+
+      .box {
+        position: relative;
+        height: 9px;
+        width: 200px;
+        margin: 50px auto;
+        border: 1px rgb(241, 3, 3) solid;
+        border-radius: 10px;
+        line-height: 8px;
+      }
+      .box .box11 {
+        position: absolute;
+        top: 50%;
+        margin: -4px auto;
+        height: 8px;
+        width: 0;
+        border-radius: 10px;
+        background-color: red;
+        transition: all ease 1s;
+      }
+      .box:hover .box11 {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <!-- 进度条 -->
+    <div class="box">
+      <div class="box11"></div>
+    </div>
+  </body>
+</html>

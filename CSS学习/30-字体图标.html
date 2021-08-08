@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>字体图标的使用方式</title>
+    <script src="fonts/iconfont.js"></script>
+    <style>
+      .icon {
+        width: 100px;
+        height: 100px;
+        vertical-align: -0.15em;
+        fill: currentColor;
+        overflow: hidden;
+      }
+
+      /* 字体声明 */
+      @font-face {
+        font-family: "iconfont";
+        /* Project id  */
+        src: url("fonts/iconfont.ttf") format("truetype");
+        /* url中为字体文件所在目录 */
+      }
+
+      /* 将该字体图标要引用的元素字体设为iconfont 才能用  然后自由设置大小颜色等 */
+      span {
+        font-family: iconfont;
+        font-size: 100px;
+        color: skyblue;
+      }
+      div {
+        height: 50px;
+        width: 250px;
+        margin: 100px auto;
+        border: solid 1px #333;
+      }
+      div::after {
+        content: "&#xe78d;";
+        font-family: "iconfont";
+      }
+    </style>
+  </head>
+  <body>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-xianxingnvxuesheng"></use>
+    </svg>
+    <span class="iconfont"> &#xe6f9;</span>
+    <span class="iconfont"> &#xe721;</span>
+    <span class="iconfont"> &#xe742;</span>
+    <span class="iconfont"> &#xe78d;</span>
+    <span class="iconfont">&#xe79f;</span>
+    <span class="iconfont"> &#xe7b3;</span>
+    <div></div>
+  </body>
+</html>

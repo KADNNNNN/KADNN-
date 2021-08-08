@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>盒子的内外变边距</title>
+    <style>
+      .box1 {
+        /* 外边距底部设置10px 顶部为0px，
+		左右自动（auto）使盒子水平居中 */
+        margin: 0 auto 10px;
+      }
+      .box2 {
+        padding: 10px; /* 内边距10px */
+        margin: 0 auto; /* 使得盒子水平居中 */
+      }
+      .box1,
+      .box2 {
+        text-align: center;
+        width: 200px;
+        height: 100px;
+        background-color: orange;
+      }
+
+      /* 外边距合并（嵌套元素垂直外边距的塌陷 */
+      .box3 {
+        width: 200px;
+        height: 100px;
+        background-color: rgb(0, 255, 213);
+        /* 
+		方法1 为父元素设置边框/内边距
+		border：1px solid transparent； 透明边框
+		padding: 1px; 外边框
+		*/
+        /* 方法2 */
+        /* overflow: hidden; */
+      }
+      .box33 {
+        width: 150px;
+        height: 50px;
+        /* border: 10px red solid; */
+        background-color: rgb(56, 128, 236);
+        margin-top: 25px; /* 直接只设置子元素外边距（顶）会造成父元素塌陷 */
+        margin-left: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">外边距</div>
+    <div class="box2">内边距</div>
+
+    <div class="box3">
+      <div class="box33"></div>
+    </div>
+  </body>
+</html>

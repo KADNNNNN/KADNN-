@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>css3新增属性选择器</title>
+    <style>
+      /* 选择属性 */
+      input::placeholder {
+        color: red;
+      }
+      input[value] {
+        color: red;
+      }
+      /* 选择属性=值 */
+      input[type="number"] {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" placeholder="请输入关键词" />
+    <input type="text" value="请输入关键词" />
+    <input type="text" />
+    <header></header>
+    <input type="text" placeholder="请输入关键词" />
+    <input type="text" value="请输入关键词" />
+    <input type="text" />
+    <header></header>
+    <input type="number" />
+  </body>
+</html>

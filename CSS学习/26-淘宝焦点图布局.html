@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>淘宝焦点图布局实例</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      li {
+        list-style: none;
+      }
+      /* 父级盒子 相对定位 */
+      .tb-promo {
+        width: 520px;
+        height: 280px;
+        position: relative;
+        top: 0;
+        left: 50%;
+        margin: 0 -260px;
+      }
+      a {
+        text-decoration: none;
+        color: black;
+      }
+      /* 相同代码属性集成写 */
+      .prev,
+      .next {
+        position: absolute;
+        /* 绝对定位的盒子垂直居中算法 */
+        top: 50%;
+        margin: -15px 0px;
+        width: 20px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0.4);
+        border: 1px transparent;
+        text-align: center;
+        line-height: 30px;
+        color: white;
+        font-size: 18px;
+      }
+      /* prev、next、绝对定位 */
+      .prev {
+        left: 0;
+        border-radius: 0px 30px 30px 0px;
+      }
+      .next {
+        right: 0;
+        border-radius: 30px 0px 0px 30px;
+      }
+      /* 小圆点 */
+      .promo-nav {
+        height: 15px;
+        width: 70px;
+        position: absolute;
+        bottom: 10px;
+        left: 50%;
+        margin: 0px -45px;
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 7px;
+      }
+      .promo-nav li {
+        float: left;
+        margin: 3px;
+        height: 8px;
+        width: 8px;
+        /* 小圆点制作 */
+        border-radius: 50%;
+        background-color: white;
+      }
+      .promo-nav .selected {
+        background-color: #ff5000;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tb-promo">
+      <a href="#" class="prev"><&nbsp;</a>
+      <a href="#" class="next">&nbsp;></a>
+      <img src="image/tbp1.jpg" alt="" />
+      <ul class="promo-nav">
+        <li class="selected"></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+  </body>
+</html>

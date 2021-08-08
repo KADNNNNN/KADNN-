@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小技巧-固定位置-贴版心一侧</title>
+    <style>
+      .box1 {
+        height: 2220px;
+        /* 版心宽度 */
+        width: 900px;
+        margin: 0px auto;
+        background-color: pink;
+      }
+      .box2 {
+        height: 160px;
+        width: 30px;
+        position: fixed;
+        left: 50%;
+        margin: 452px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box2">滑不走的小广告</div>
+    <div class="box1">版心</div>
+  </body>
+</html>

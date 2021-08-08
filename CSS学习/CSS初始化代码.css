@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* 清除em、i标签中字体自带的斜体 */
+em,
+i {
+  font-style: normal;
+}
+/* 清除 li 中的小圆点 */
+li {
+  list-style: none;
+}
+img {
+  /* border：0 照顾低版本浏览器，如果图片外面包含了链接会有边框的问题 */
+  border: 0;
+  /* 取消图片底侧有空白缝隙的问题 */
+  vertical-align: middle;
+}
+/* 鼠标经过按钮 自动将光标切换为小手 */
+button {
+  cursor: pointer;
+}
+/* 清除链接自带样式颜色和下划线 */
+a {
+  color: #333;
+  text-decoration: none;
+}
+
+button,
+input {
+  font-family: Microsoft YaHei, Heiti SC, arial, Hiragino Sans GB, "\5B8B\4F53",
+    sans-serif;
+}
+/* \5B8B\4F53 Unicode编码，表示宋体  这样写浏览器兼容性比较好 微软雅黑等都有这个编码*/
+body {
+  /* CSS3 抗锯齿形，让文字显示的更加清晰 （了解） */
+  -webkit-font-smoothing: antialiased;
+  font: 12px/1.5 Microsoft yahei, heiti SC, tahoma, arial, Hiragino Sans GB,
+    "\5B8B\4F53", sans-serif;
+}
+
+/* 清除浮动 (伪元素) */
+.clearfix:after {
+  visibility: hidden;
+  clear: both;
+  display: block;
+  content: ".";
+  height: 0;
+}
+.clearfix {
+  *zoom: 1;
+}

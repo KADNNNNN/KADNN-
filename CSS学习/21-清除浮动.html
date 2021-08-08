@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>清除浮动的四种方法</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body > div {
+        height: 150px;
+        background-color: rgb(247, 247, 247);
+      }
+      .box1,
+      .box2,
+      .box3,
+      .box4 {
+        height: 20px;
+        background-color: rgb(155, 155, 155);
+      }
+      .way1,
+      .way2,
+      .way3,
+      .way4 {
+        width: 400px;
+        background-color: gray;
+        margin: 0 auto;
+      }
+      .way1 > .w1,
+      .way1 > .w2,
+      .way1 > .w3,
+      .way2 > div,
+      .way3 > div,
+      .way4 > div {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(255, 142, 142);
+        float: left;
+      }
+
+      /* 法1 -----额外标签法 */
+      .way1 .clear {
+        clear: both;
+      }
+      /* 法2 -----父级添加overflow */
+      .way2 {
+        overflow: hidden;
+      }
+      /* 法3 -----:after伪元素法 */
+      .way3::after {
+        content: "";
+        display: block;
+        height: 0;
+        clear: both;
+        visibility: hidden;
+      }
+      .way3 {
+        *zoom: 1;
+      }
+      /* 法4 -----双伪元素清除浮动 */
+      .way4::before,
+      .way4::after {
+        content: "";
+        display: table;
+      }
+      .way4::after {
+        clear: both;
+      }
+      .way4 {
+        *zoom: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="way1">
+        <div class="w1">1</div>
+        <div class="w2">2</div>
+        <div class="w3">3</div>
+        <div class="clear"></div>
+      </div>
+      <div class="box1">测试盒子1</div>
+    </div>
+    <div>
+      <div class="way2">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div class="box2">测试盒子2</div>
+    </div>
+    <div>
+      <div class="way3">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div class="box3">测试盒子3</div>
+    </div>
+    <div>
+      <div class="way4">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+      </div>
+      <div class="box4">测试盒子4</div>
+    </div>
+  </body>
+</html>

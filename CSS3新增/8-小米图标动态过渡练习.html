@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @font-face {
+        font-family: "iconfont";
+        src: url("../fonts/阿里/iconfont.ttf") format("truetype");
+      }
+
+      .box1 {
+        position: relative;
+        height: 50px;
+        width: 50px;
+        background-color: orange;
+        margin: 50px 100px;
+      }
+      .box11 {
+        font-family: "iconfont";
+        font-size: 30px;
+        text-align: center;
+        line-height: 50px;
+        color: white;
+        transition: all 10s ease-in-out;
+      }
+
+      .box1:hover .box11 {
+        position: absolute;
+        left: -30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">
+      <div class="box11">
+        <span>&#xe832;</span>
+        <span>&#xe601;</span>
+      </div>
+    </div>
+  </body>
+</html>

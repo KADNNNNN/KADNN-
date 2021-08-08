@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zn-CH">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        /* 设置块元素的宽、高 */
+        width: 120px;
+        height: 25px;
+        /* 字体颜色 */
+        color: white;
+        /* 消除链接的默认下划线 */
+        text-decoration: none;
+        /* 文本水平居中 上下居中还未实现 */
+        text-align: center;
+        background-color: rgb(61, 61, 61);
+        /* 把行内元素a 转换成块级元素  */
+        display: block;
+      }
+      div {
+        background-color: rgb(61, 61, 61);
+        width: 100px;
+        height: 30px;
+        /* 把块内元素转换成行内元素 */
+        display: inline;
+        color: white;
+      }
+      span {
+        width: 100px;
+        height: 25px;
+        background-color: teal;
+        /* 行内元素转行内块元素 */
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="https://objtube.github.io/front-end-roadmap/" target="_blank"
+      >点击登录>
+    </a>
+    <a href="https://objtube.github.io/front-end-roadmap/" target="_blank"
+      >点击注册>
+    </a>
+    <br />
+    <div>块级元素</div>
+    <div>块级元素</div>
+    <span>行内块元素</span>
+    <span>行内块元素</span>
+  </body>
+</html>

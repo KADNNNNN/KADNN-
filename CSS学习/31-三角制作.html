@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三角制作</title>
+    <style>
+      body {
+        background-color: gray;
+      }
+      /* 下三角 */
+      .triangle1 {
+        display: inline-block;
+        margin: 10px;
+        height: 0px;
+        width: 0px;
+        line-height: 0;
+        font-size: 0;
+        border-top: rgb(255, 255, 255) 10px solid;
+        border-right: transparent 10px solid;
+        border-bottom: transparent 10px solid;
+        border-left: transparent 10px solid;
+      }
+      /* 右三角 */
+      .triangle2 {
+        display: inline-block;
+        margin: 10px;
+        height: 0px;
+        width: 0px;
+        border-top: transparent 10px solid;
+        border-right: white 10px solid;
+        border-bottom: transparent 10px solid;
+        border-left: transparent 10px solid;
+      }
+      /* 上三角 */
+      .triangle3 {
+        display: inline-block;
+        margin: 10px;
+        height: 0px;
+        width: 0px;
+        border-top: transparent 10px solid;
+        border-right: transparent 10px solid;
+        border-bottom: white 10px solid;
+        border-left: transparent 10px solid;
+      }
+      /* 左三角 */
+      .triangle4 {
+        display: inline-block;
+        margin: 10px;
+        height: 0px;
+        width: 0px;
+        border-top: transparent 10px solid;
+        border-right: transparent 10px solid;
+        border-bottom: transparent 10px solid;
+        border-left: white 10px solid;
+      }
+      .box1 {
+        /* 子绝父相 */
+        position: relative;
+        width: 100px;
+        height: 150px;
+        background-color: white;
+      }
+      .box1 .triangle5 {
+        /* 绝对定位 */
+        position: absolute;
+        top: -8px;
+        right: 15px;
+        height: 0px;
+        width: 0px;
+        /* 照顾兼容性 */
+        line-height: 0;
+        font-size: 0;
+        border-top: transparent 4px solid;
+        border-right: transparent 4px solid;
+        border-bottom: rgb(255, 255, 255) 4px solid;
+        border-left: transparent 4px solid;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="triangle1"></div>
+    <div class="triangle2"></div>
+    <div class="triangle3"></div>
+    <div class="triangle4"></div>
+    <div class="box1">
+      <div class="triangle5"></div>
+    </div>
+  </body>
+</html>

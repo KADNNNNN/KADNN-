@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>三角强化使用</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      .bigbox {
+        margin: 20px auto;
+        width: 199px;
+        height: 24px;
+        border: red 1px solid;
+      }
+      .box1 {
+        float: left;
+        position: relative;
+        width: 90px;
+        height: 25px;
+        line-height: 25px;
+        text-align: center;
+        background-color: red;
+        font-size: 5px;
+        color: white;
+      }
+      .box2 {
+        position: absolute;
+        top: 0;
+        left: 190px;
+        height: 0;
+        width: 0;
+        border-top: red 25px solid;
+        border-left: red 0px solid;
+        border-bottom: red 0px solid;
+        border-right: transparent 10px solid;
+      }
+      span {
+        float: left;
+        height: 25px;
+
+        margin: 0px 20px;
+        font-size: 12px;
+        line-height: 25px;
+        color: rgb(165, 165, 165);
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bigbox">
+      <div class="box1">
+        折扣价 999元
+        <div class="box2"></div>
+      </div>
+      <span>原价 1000元</span>
+    </div>
+  </body>
+</html>

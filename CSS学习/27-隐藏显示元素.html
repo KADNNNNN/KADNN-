@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>隐藏于显示元素的三种方法</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      div {
+        float: left;
+        margin: 10px 10px;
+        height: 100px;
+        width: 150px;
+        font-size: 22px;
+        background-color: turquoise;
+      }
+
+      .box1 {
+        /* 隐藏后脱标 */
+        display: none;
+      }
+      .box11 {
+        display: block;
+      }
+
+      .box2 {
+        visibility: hidden;
+      }
+
+      .box22 {
+        visibility: visible;
+      }
+      /* 相当于不变，文字超出部分依然显示 */
+      .box3 {
+        overflow: visible;
+      }
+      /* 隐藏超出部分文字内容 */
+      .box33 {
+        overflow: hidden;
+      }
+      /* 添加滚动条 （无论需不需要都添加滚动条，较死板） */
+      .box333 {
+        overflow: scroll;
+      }
+      /* 自动给需要添加滚动条的地方添加滚动条 （需要滚动的才自动添加，文字未溢出则不添加） */
+      .box3333 {
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- display -->
+    <div class="box1">隐藏</div>
+    <div class="box11">显示</div>
+    <!-- visibility -->
+    <div class="box2">隐藏</div>
+    <div class="box22">显示</div>
+    <!-- overflow -->
+    <div class="box3">
+      隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字
+    </div>
+    <div class="box33">
+      隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏
+    </div>
+    <div class="box333">
+      隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏
+    </div>
+    <div class="box3333">
+      隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏文字隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏隐藏
+    </div>
+  </body>
+</html>

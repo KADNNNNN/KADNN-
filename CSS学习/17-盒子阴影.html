@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>盒子阴影</title>
+    <style>
+      .box1 {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 100px auto;
+        box-shadow: 5px 6px 6px 1px rgb(0 0 0 / 33%);
+      }
+      .box2 {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 100px auto;
+        box-shadow: 5px 6px 6px 1px rgba(0, 0, 0, 0.3) inset;
+      }
+      .box3 {
+        width: 100px;
+        height: 100px;
+        background-color: pink;
+        margin: 100px auto;
+      }
+      .box3:hover {
+        box-shadow: 5px 6px 6px 1px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    动态效果：
+    <div class="box3"></div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>绝对定位的盒子居中算法</title>
+    <style>
+      .box1 {
+        /***** 水平居中 *****/
+        height: 100px;
+        width: 100px;
+        /* 绝对定位：浏览器的50%处 */
+        position: absolute;
+        left: 50%;
+        /* 减去自身一半的宽度 */
+        margin: 0 -50px;
+        background-color: pink;
+      }
+      .box2 {
+        /***** 垂直居中 *****/
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        margin: -50px 0;
+        background-color: skyblue;
+      }
+      .box3 {
+        /***** 水平垂直居中 *****/
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -50px 0px 0px -50px;
+        background-color: rgb(255, 199, 95);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box1">水平居中对齐</div>
+    <div class="box2">垂直居中对齐</div>
+    <div class="box3">垂直居中对齐</div>
+  </body>
+</html>
