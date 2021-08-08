@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>arguments的使用</title>
+    <script>
+      // 	// ***** 用法：*****
+      //   function fn() {
+      //     console.log(arguments);
+      //   }
+      //   fn(1, 2, 3);
+
+      // 案例1、利用函数求任意个数的最大值
+      function getMax() {
+        var maxNum = arguments[0];
+        for (var i = 1; i < arguments.length; i++) {
+          if (arguments[i] > maxNum) {
+            maxNum = arguments[i];
+          }
+        }
+        return maxNum;
+      }
+      var re = getMax(1, 5, 6, 8, 9, 12, 0, 32, 64, 9, 2, 4);
+      console.log(re);
+    </script>
+  </head>
+  <body></body>
+</html>

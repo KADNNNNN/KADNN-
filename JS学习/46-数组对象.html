@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组对象</title>
+    <script>
+      // ***** 复习：创建数组的两个方式 *****
+      // 1. 利用字面量创建数组
+      var arr = [1, 2, 3];
+      console.log(arr[0]); // 1
+
+      //  2. 利用new Array()
+      var arr1 = new Array(); // 创建了一个空的数组
+      var arr2 = new Array(2); // 创建了一个数组长度为2，里面有两个空的数组元素
+      var arr3 = new Array(1, 2, 3); // 创建了一个数组[1,2,3]
+      console.log(arr1, arr2, arr3);
+
+      //   ***** 检测是否为数组 *****
+      // (1) instanceof 运算符，它可以用来检测是否为数组
+      var arr = [];
+      var obj = {};
+      console.log(arr instanceof Array); // true
+      console.log(obj instanceof Array); // false
+      // (2) Array.isArray(参数); H5新增的方法，ie9以上版本支持
+      console.log(Array.isArray(arr)); // true
+      console.log(Array.isArray(obj)); // false
+
+      //   ***** 添加删除数组元素的方法 *****
+      // 1. push() 在数组的末尾添加一个或多个数组元素
+      var arr = [1, 2, 3];
+      arr.push(4);
+      console.log(arr); // [1,2,3,4]
+      console.log(arr.push(5, "大聪明")); // .push方法的返回值是新数组的长度
+      console.log(arr); // [1,2,3,4,5,'大聪明']
+      // 2. unshift() 在数组的开头添加一个或多个数组元素
+      console.log(arr.unshift(0)); // 7
+      console.log(arr); // [0, 1, 2, 3, 4, 5, "大聪明"]
+      // 3. pop() 删除数组的最后一个元素
+      console.log(arr.pop()); // 大聪明 pop()不跟参数，只能删除一个元素，返回值为删除的元素的值
+      console.log(arr); // [0, 1, 2, 3, 4, 5]
+      // 4. shift() 删除数组的第一个元素
+      console.log(arr.shift()); // 0
+      console.log(arr); // [1, 2, 3, 4, 5]
+    </script>
+  </head>
+  <body></body>
+</html>

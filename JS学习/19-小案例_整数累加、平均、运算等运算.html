@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>for循环计算运用</title>
+    <script>
+      // 一、求1-100整数累加和的运算
+      var sum = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   // sum =sum + i;  等价于：
+      //   sum += i;
+      // }
+      // console.log(sum);
+
+      // 二、求1-100之间所有数的平均值
+      // var avg = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   sum += i;
+      //   avg = sum / i;
+      // }
+      // console.log(avg);
+
+      // 三、求1-100之间所有偶数的和 和所有奇数的和
+      // var sum1 = 0;
+      // var sum2 = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   if (i % 2 == 0) {
+      //     sum1 += i;
+      //   } else {
+      //     sum2 += i;
+      //   }
+      // }
+      // console.log("所有偶数之和为：" + sum1);
+      // console.log("所有奇数之和为：" + sum2);
+
+      // 四、求1-100之间所有能被三整除的数字的和
+      // var sum3 = 0;
+      // for (var i = 1; i <= 100; i++) {
+      //   if (i % 3 == 0) {
+      //     sum3 += i;
+      //   }
+      // }
+      // console.log("所有能被三整除的数字的和为：" + sum3);
+
+      // 五、小案例：求班级平均成绩和总成绩 班级人数和每个人的成绩要求用户输入
+      // var num_people = prompt("请输入班级总人数：");
+      // var sum = 0;
+      // var avg = 0;
+      // for (var i = 1; i <= num_people; i++) {
+      //   var score = prompt("请输入第" + i + "个同学的成绩");
+      //   sum += parseInt(score);
+      // }
+      // avg = sum / num_people;
+      // alert("班级总成绩为：" + sum + "\n班级平均成绩为：" + avg);
+
+      // 六、一行打印多颗星星 （追加字符串用法）
+      var str = "";
+      var star_num = prompt("你想要多少颗小星星?");
+      for (var i = 1; i <= star_num; i++) {
+        str = str + "★";
+      }
+      console.log(str);
+    </script>
+  </head>
+  <body></body>
+</html>

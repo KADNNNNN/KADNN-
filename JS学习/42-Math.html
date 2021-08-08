@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math 内置对象</title>
+    <script>
+      Math.PI; // 圆周率
+      Math.floor(); // 向下取整
+      Math.ceil(); // 向上取整
+      Math.round(); // 四舍五入 就近取整 注意负数 -3.5的结果为-3
+      Math.abs(); // 绝对值
+      Math.max() / Math.min(); // 最大值/最小值
+
+      //   random 得到两个数之间的随机整数
+      function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min; //不含最大值，含最小值
+      }
+      console.log(getRandomInt(1, 100));
+
+      //   random 得到两个数之间的随机整数,包括这两个数在内
+      function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1)) + min; //含最大值，含最小值
+      }
+
+      //   随机点名
+      var arr = ["大聪明", "小聪明", "刘哥", "乙洁桑", "小刘"];
+      console.log(arr[getRandomIntInclusive(0, arr.length - 1)]);
+
+      //   猜数游戏 （玩游戏需要设置随机整数的范围，和猜数次数）
+
+      function gameGuessNum(min, max, times) {
+        var num = getRandomIntInclusive(min, max); // 调用函数，获取[min,max]范围内的随机整数
+        alert("游戏开始！");
+        for (var i = 1; i <= times; i++) {
+          var guessNum = prompt("请输入您猜的第" + i + "个数字:");
+          if (guessNum == num) {
+            alert("恭喜你，胜利啦！✿✿ヽ(°▽°)ノ✿");
+            break;
+          } else if (guessNum !== num && i !== times) {
+            guessNum < num
+              ? alert(
+                  "猜错啦，正确答案比这个数要大哟，你还剩" +
+                    (times - i) +
+                    "次机会，继续加油哦~"
+                )
+              : alert(
+                  "猜错啦，正确答案比这个数要小哟，你还剩" +
+                    (times - i) +
+                    "次机会，继续加油哦~"
+                );
+            continue;
+          } else if (guessNum !== num && i == times) {
+            alert("最后一次机会也猜错了哦，还想继续玩的话刷新重来吧~");
+          }
+        }
+      }
+
+      gameGuessNum(1, 50, 10);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获取数据类型 typeof</title>
+    <script>
+      var age = 18;
+      console.log(typeof age); // number
+      var user_age = prompt("请输入您的真实年龄：");
+      console.log(typeof user_age); // string   原因：prompt中通过用户输入得到的类型为字符串
+      var myname;
+      console.log(myname); //undefined  未定义
+      var space = null;
+      console.log(space); //null / object（对象）
+    </script>
+  </head>
+  <body></body>
+</html>

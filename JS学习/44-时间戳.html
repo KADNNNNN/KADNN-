@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>获得时间戳的四种方式</title>
+    <script>
+      // 1. 通过valueOf() getTime()  （需要实例化日期对象）
+      var date = new Date();
+      console.log(date.valueOf()); // 1628129559653
+      console.log(date.getTime()); // 1628129559653
+      // 2. 简单的写法（最常用）
+      var date1 = +new Date(); // +new Date() 返回的就是总的毫秒数, 这种方法不用实例化日期对象
+      console.log(date1); // 1628129559653
+      // 3. H5新增 获得总的毫秒数
+      console.log(Date.now()); // 1628129559653
+    </script>
+  </head>
+  <body></body>
+</html>

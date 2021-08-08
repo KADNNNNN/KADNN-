@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>函数案例</title>
+    <script>
+      //   // 案例1、计算器 用户任意输入两个数和任意算术运算，弹出运算结果
+      //   function counters() {
+      //     var num1 = prompt("请输入第一个数：");
+      //     num1 = parseFloat(num1);
+      //     var arithmetic = prompt("请输入运算方法：");
+      //     var num2 = prompt("请输入第二个数：");
+      //     num2 = parseFloat(num2);
+      //     if (arithmetic == "+") {
+      //       return num1 + num2;
+      //     } else if (arithmetic == "-") {
+      //       return num1 - num2;
+      //     } else if (arithmetic == "*") {
+      //       return num1 * num2;
+      //     } else if (arithmetic == "/") {
+      //       return num1 / num2;
+      //     }
+      //   }
+      //  console.log(counters());
+
+      //   案例2、质数判断器
+      function judgePrimeNum() {
+        var num = prompt("请输入您想判断的数字：");
+        num = parseInt(num);
+        for (var i = 2; i <= num; i++) {
+          if (num % i == 0 && i !== num) {
+            alert("这个数不是质数。");
+            break;
+          } else if (num == i) {
+            alert("这个数是质数！");
+            break;
+          }
+        }
+      }
+      judgePrimeNum();
+    </script>
+  </head>
+  <body></body>
+</html>

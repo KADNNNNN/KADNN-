@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>根据字符返回指定字符的位置（类似数组）</title>
+    <script>
+      // str.indexOf('要查找的字符',[起始查找位置]) []为可无选项，没有的话从第一个开始查找
+      var str = "你好我是大聪明,大聪明最聪明~";
+      console.log(str.indexOf("大")); // 4
+      console.log(str.indexOf("大", 4 + 1)); //8
+      // 统计某个字或词出现的次数
+      function getNumber(word) {
+        var count = 0;
+        var pos = str.indexOf(word);
+        while (pos !== -1) {
+          count++;
+          pos = str.indexOf(word, pos + 1);
+        }
+        return count;
+      }
+      console.log(getNumber("大聪明最聪明")); // 1
+      console.log(getNumber("大聪明")); // 2
+      console.log(getNumber("聪明")); // 3
+      console.log(getNumber("大")); // 2
+    </script>
+  </head>
+  <body></body>
+</html>

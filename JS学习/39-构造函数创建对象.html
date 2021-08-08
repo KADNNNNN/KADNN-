@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>构造函数创建对象</title>
+    <script>
+      // ***** 构造函数创建对象的语法格式 *****
+      // 例：用户信息对象创建
+      function User_inf(userName, userGender, userAge) {
+        this.userName = userName;
+        this.userGender = userGender;
+        this.userAge = userAge;
+        this.sign = function (word) {
+          console.log(word);
+        };
+      }
+      var user01 = new User_inf("大聪明", "女", 18); // 调用函数返回的是一个对象  传入属性对应的值  将对象赋值到一个变量对该对象命名
+      console.log(user01);
+      user01.sign("大聪明最聪明"); // 调用对象中的方法并传参
+      var user02 = new User_inf("路飞", "男", 17); // 调用函数返回对象
+      var user03 = new User_inf("索隆", "男", 17); // 调用函数返回对象
+    </script>
+  </head>
+  <body></body>
+</html>

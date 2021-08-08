@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数据类型转换</title>
+    <script>
+      //   // 1. 转换为字符串类型
+      //   var num = 1;
+      //   console.log(typeof num);
+      //   // ① toString() 转换
+      //   console.log(typeof num.toString());
+      //   // ② String() 函数 强制转换
+      //   console.log(typeof String(num));
+      //   // ③ 加空字符串 隐式转换
+      //   console.log(typeof (num + ""));
+
+      //   2. 转换为数值型
+      //   // ① parseInt（变量） 转换为整数型
+      //   var age = prompt("请输入您的真实年龄：");
+      //   console.log(age); // string
+      //   console.log(parseInt(age)); // age number
+      //   console.log(parseInt("12px")); // 12  自动掐掉数字后面的非数值型字符
+      //   console.log(parseInt("rem12px")); // NaN  识别到的第一个字符不是数字，判断为非数值类型
+      //   console.log(parseInt(3.14)); // 3    浮点数转换为整数   直接取小数点前的整数
+      //   console.log(parseInt(3.94)); // 3     浮点数转换为整数   直接取小数点前的整数
+      //   //  ② parseFloat（变量） 转换为浮点型
+      //   var hight = prompt("请输入您的真实身高：");
+      //   console.log(hight); // string
+      //   console.log(parseFloat(hight)); // 输入值 number
+      //   console.log(parseFloat(3)); // 3
+      //   console.log(parseFloat(3.14)); // 3.14
+      //   console.log(parseFloat(3.94)); // 3.94
+      //   console.log(parseInt("12px")); // 12  自动掐掉数字后面的非数值型字符
+      //   console.log(parseInt("rem12px")); // NaN  识别到的第一个字符不是数字，判断为非数值类型
+      // ③ 利用 Number（变量）函数
+      console.log(Number("12")); // number
+      console.log(Number("12px")); // NaN
+      //   ④ 利用 - * / 隐式转换
+      console.log("12" - 0); //12 number
+      console.log("12" * 1); //12 number
+      console.log("12" / 1); //12 number
+      console.log("120" - "100"); //20 number
+    </script>
+  </head>
+  <body></body>
+</html>

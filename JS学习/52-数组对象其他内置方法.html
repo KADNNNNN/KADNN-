@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 1. splice() 会影响原数组  可以做到定位删除、修改、添加等操作
+      const months = ["Jan", "March", "April", "June"];
+      months.splice(1, 0, "Feb");
+      console.log(months); // ["Jan", "Feb", "March", "April", "June"]
+
+      months.splice(4, 1, "May");
+      console.log(months); // ["Jan", "Feb", "March", "April", "May"]
+      months.splice(4, 1, "1", "2");
+      console.log(months); // ["Jan", "Feb", "March", "April", "1", "2"]
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组扩容、元素修改</title>
+    <script>
+      var arr1 = ["周一", "周二", "周三", "周四", "周五"];
+      // 1. 通过修改 length 长度给数组扩容
+      // arr1.length = 7;
+      // console.log(arr1); // 原来的元素+两个空元素
+      // console.log(arr1[5]); // undefined
+      // console.log(arr1[6]); // undefined
+
+      //   // 2.通过修改数组索引新增或修改数组元素
+      //   arr1[5] = "周六"; // 追加数组元素
+      //   arr1[6] = "周日"; // 追加数组元素
+      //   console.log(arr1);
+
+      //   arr1[0] = "星期一"; // 替换数组元素
+      //   console.log(arr1);
+
+      //   //  ！注意：不要直接给数组名赋值，否则里面的数组元素都没有了
+      //   arr1 = "周末";
+      //   console.log(arr1);
+
+      //   // 案例1、新建一个数组 里面存放10个整数，1-100
+      //   var arr2 = [];
+      //   for (var i = 1; i <= 100; i++) {
+      //     arr2[i - 1] = i;
+      //   }
+      //   console.log(arr2);
+
+      // 案例2、筛选出数组中大于10的数，添加进新的数组
+      //   法1：定义新变量作为新数组的索引号
+      var N_arr = [];
+      var arr = [1, 5, 3, 20, 5, 15, 25, 3, 96, 31, 0, 54, 10];
+      var j = 0;
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > 10) {
+          N_arr[j] = arr[i];
+          j++;
+        }
+      }
+      console.log(N_arr);
+      //   法2：用新数组的长度作为新数组的索引号
+      var N_arr = [];
+      var arr = [1, 5, 3, 20, 5, 15, 25, 3, 96, 31, 0, 54, 10];
+      for (var i = 0; i < arr.length; i++) {
+        if (arr[i] > 10) {
+          // 以数组的长度检测数组的元素变化 做数组的索引号
+          N_arr[N_arr.length] = arr[i];
+        }
+      }
+      console.log(N_arr);
+    </script>
+  </head>
+  <body></body>
+</html>

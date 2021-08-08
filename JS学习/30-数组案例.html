@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组案例</title>
+    <script>
+      //   // 案例1、将数组中的0值去掉，形成一个不包含0的新数组
+      arr1 = [2, 0, 1, 6, 0, 4, 6, 0, 4, 8, 0, 0, 6, 0, 5, 0, 5, 6, 9];
+      N_arr1 = [];
+      for (var i = 0; i < arr1.length; i++) {
+        if (arr1[i] != 0) {
+          N_arr1[N_arr1.length] = arr1[i];
+        }
+      }
+      console.log(N_arr1);
+
+      //  案例2、翻转数组
+      var arr2 = ["大聪明", "是", "最聪明"];
+      var N_arr2 = [];
+      for (var i = 0; i < arr2.length; i++) {
+        N_arr2[i] = arr2[arr2.length - 1 - i];
+      }
+      console.log(arr2);
+      console.log(N_arr2);
+
+      // 案例3、冒泡排序
+      arr3 = [5, 4, 3, 2, 1, 0, 1];
+      for (var i = 0; i < arr3.length; i++) {
+        for (var j = 0; j < arr3.length - i; j++) {
+          // j < arr3.length 也可  - i后计算量减少
+          if (arr3[j] > arr3[j + 1]) {
+            // 元素交换
+            var temp = arr3[j];
+            arr3[j] = arr3[j + 1];
+            arr3[j + 1] = temp;
+          }
+        }
+      }
+      console.log(arr3);
+    </script>
+  </head>
+  <body></body>
+</html>

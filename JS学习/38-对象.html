@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>对象</title>
+    <script>
+      //   // ***** 创建对象(方法1) *****
+      var obj = {
+        userName: "大聪明",
+        gender: "女",
+        sayHi: function () {
+          console.log("hi~");
+        },
+      };
+      obj.age = 18;
+      console.log(obj); // 追加属性
+      //   // ***** 使用对象 *****
+      //   //   1. 调用对象的属性（方法1）
+      //   console.log(obj.userName); // 大聪明
+      //   console.log(obj.gender); // 女
+      //   //   2. 调用对象的属性（方法2）
+      //   console.log(obj["userName"]); // 大聪明
+      //   console.log(obj["gender"]); // 女
+      //   //   3. 调用对象的方法
+      //   obj.sayHi(); // hi~
+
+      //   // ***** 创建对象(方法2) *****
+      //   var obj = new Object();
+      //   //   追加属性
+      //   obj.userName = "大聪明";
+      //   obj.gender = "女";
+      //   obj.age = 18;
+      //   //   追加方法
+      //   obj.sayHi = function () {
+      //     console.log("hi~");
+      //   };
+      //   console.log(obj);
+
+      //   小案例1、创建鸣人的个人档案
+      var MingRen = new Object();
+      MingRen.name = "鸣人";
+      MingRen.gender = "男";
+      MingRen.age = 18;
+      MingRen.fenShen = function () {
+        console.log("鸣人");
+        console.log("鸣人");
+      };
+
+      MingRen.fenShen();
+    </script>
+  </head>
+  <body></body>
+</html>

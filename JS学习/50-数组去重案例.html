@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>数组去重案例（重点）</title>
+    <script>
+      // 方法1、先判断是否重复，修改重复值为null，将非null元素存入新数组
+      //   (缺陷：这个方法会改变原数组中的值)
+      var arr = ["a", "c", "d", "a", "b", "c", "f", "c"];
+      function deDuplication01(arr) {
+        var newArr = [];
+        if (Array.isArray(arr)) {
+          for (var i = 0; i < arr.length; i++) {
+            if (arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+              // 判断旧数组中第i个元素是否重复，
+              // 核心思路：arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])  从前往后寻找到的索引号 !== 从后往前寻找到的 意味着这个元素有重复值
+              arr[arr.lastIndexOf(arr[i])] = null;
+            }
+            arr[i] == null ? arr[i] : newArr.push(arr[i]);
+          }
+        } else {
+          console.log("请输入正确的数组格式数据！");
+        }
+        return newArr;
+      }
+      console.log(deDuplication01(arr));
+
+      //  方法2、遍历旧数组，依次存入新数组，存入之前判断新数组中有无该元素，没有就存入
+      var arr = ["a", "c", "d", "a", "b", "c", "f", "c"];
+      function deDuplication02(arr) {
+        var newArr = [arr[0]];
+        for (var i = 1; i < arr.length; i++) {
+          if (newArr.indexOf(arr[i]) == -1) {
+            // 判断新数组中有没有arr[i]这个元素，没有会返回-1，所以如果返回值== -1 ，则新数组中没有这个值，可以加入
+            newArr.push(arr[i]);
+          }
+        }
+        return newArr;
+      }
+      console.log(deDuplication02(arr));
+    </script>
+  </head>
+  <body></body>
+</html>

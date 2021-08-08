@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>循环小案例_账号密码登录</title>
+    <script>
+      var userName = prompt("请输入您的用户名：（共10次机会）");
+      var passWord = prompt("请输入密码：（共10次机会）");
+      for (var i = 1; i <= 10; i++) {
+        if ((userName !== "大聪明" || passWord !== "123456") && i <= 9) {
+          alert("用户名或密码错误，请重新输入！");
+          userName = prompt(
+            "请输入您的用户名：（剩余" + parseInt(10 - i) + "次机会）"
+          );
+          passWord = prompt(
+            "请输入密码：（剩余" + parseInt(10 - i) + "次机会）"
+          );
+          continue;
+        } else if (userName == "大聪明" && passWord == "123456" && i <= 9) {
+          alert("欢迎登录~");
+          break;
+        }
+        while (i == 10) {
+          alert("您的次数已用完！账号将锁定一小时！");
+          break;
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

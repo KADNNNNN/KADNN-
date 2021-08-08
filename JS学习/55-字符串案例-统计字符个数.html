@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>字符串案例</title>
+    <script>
+      // 案例1.  判断一个字符串中出现最多的字符，并统计其次数
+      var str = "andhgdbnzgjccanvxgdfcgxahvgxasghcjdsfcbsch";
+
+      function counts(str) {
+        var obj = {};
+        for (var i = 0; i < str.length; i++) {
+          var chars = str.charAt(i); // 遍历字符串 将字符存入chars
+          // 判断字符是否存在于obj这个对象中，
+          // 如果存在，那么这个字符属性的数量+1，
+          // 如果不存在，那么在obj中添加这个字符的属性，并将属性值设为1
+          if (obj[chars]) {
+            obj[chars]++;
+          } else {
+            obj[chars] = 1;
+          }
+        }
+        return obj; // 返回obj对象，里面包含字符串中的所有字符和出现的次数
+      }
+      console.log(counts(str));
+
+      function getMax(obj) {
+        obj = counts(str); // 调用统计字符出现次数的函数，获得各个字符出现的次数 作为传入本函数的参数
+        var max = 0;
+        var re = "";
+        for (var k in obj) {
+          if (max < obj[k]) {
+            max = obj[k];
+            re = "出现最多的字符是：" + k + ",一共出现" + max + "次。";
+          }
+        }
+        return re;
+      }
+
+      console.log(getMax());
+    </script>
+  </head>
+  <body></body>
+</html>

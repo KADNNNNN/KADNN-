@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>作用域</title>
+    <script>
+      //   var num = 10; // ***** 全局作用域 *****
+      //   console.log(num); // 10
+      //   function fn() {
+      //     var num = 20; // ***** 局部作用域（函数作用域）*****
+      //     console.log(num); // 20
+      //   }
+      //   fn();
+      //   console.log(num); // 10
+
+      //   ***** 全局变量 **** (全局都可使用)
+      //   var num = 10;
+      //   console.log(num); // 10
+      //   function fn() {
+      //     console.log(num); // 10
+      //   }
+      //   fn();
+      //   console.log(num); // 10
+
+      //   // **** 特殊情况的全局变量 ****
+      //   function fn() {
+      //     var num1 = 10;  // ***** 局部变量 ***** (只在函数内部使用)
+      //     num2 = 20;
+      //   }
+      //   console.log(num2);
+      //   //   console.log(num1); // 报错 num1 is not defined
+
+      //   //  **** 当前js没有块级作用域 ****
+      //   if (1 < 2) {
+      //     var num = 10;
+      //   }
+      //   console.log(num); // 10
+
+      // ***** 作用域链 *****
+      var num = 10;
+
+      function fn() {
+        var num = 20;
+
+        function fun() {
+          console.log(num); // 20
+        }
+        fun();
+      }
+      fn();
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>continue的应用</title>
+    <script>
+      //  continue 的用法
+      for (var i = 1; i <= 5; i++) {
+        if (i == 3) {
+          console.log("这个包子是坏的，我不吃！");
+          continue; // 退出本次循环 立即进入i++ 开始下一次循环
+        }
+        console.log("我在吃第" + i + "个包子");
+      }
+
+      //   案例1、求1-100之间，除能被7整除外的整数之和
+      var sum = 0;
+      for (var i = 1; i <= 100; i++) {
+        if (i % 7 == 0) {
+          continue;
+        }
+        sum += i;
+      }
+      console.log(sum);
+    </script>
+  </head>
+  <body></body>
+</html>

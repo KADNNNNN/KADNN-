@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>预解析</title>
+    <script>
+      // ***** 预解析变量  *****
+      //   情况1
+      //   console.log(num); // undefined
+      //   var num = 10;
+      //   // 相当于 ：
+      //   var num;
+      //   console.log(num);
+      //   num = 10;
+
+      //   //  情况2
+      //   fun(); // 报错：fun is not a function
+      //   var fun = function () {
+      //     console.log(20);
+      //   };
+      //   //   执行步骤相当于：
+      //   var fun;
+      //   fun();
+      //   fun = function () {
+      //     console.log(20);
+      //   };
+
+      //  ***** 预解析函数 *****
+      fn();
+      function fn() {
+        console.log(20);
+      }
+      //  相当于：
+      function fn() {
+        // 函数提升
+        console.log(20);
+      }
+      fn();
+    </script>
+  </head>
+  <body></body>
+</html>

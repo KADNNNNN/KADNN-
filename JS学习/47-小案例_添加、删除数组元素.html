@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>添加、删除数组元素小案例</title>
+    <script>
+      // 案例1. 将工资数组中，小于等于2000的元素放到新数组中
+      var wages = [1500, 1200, 2000, 2100, 1800];
+      var newArr = [];
+      for (var i = 0; i <= wages.length; i++) {
+        if (wages[i] < 2000) {
+          newArr.push(wages[i]);
+          continue;
+        }
+      }
+      console.log(newArr);
+    </script>
+  </head>
+  <body></body>
+</html>

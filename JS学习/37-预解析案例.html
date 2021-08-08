@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>预解析案例</title>
+    <script>
+      //   案例1
+      //   var num = 10;
+      //   fun();
+      //   function fun() {
+      //     console.log(num);
+      //     var num = 20;
+      //   }
+      //   // undefined
+      //   //   执行步骤相当于：
+      //   var num;
+      //   function fun() {
+      //     var num;
+      //     console.log(num);
+      //     num = 20;
+      //   }
+      //   fun();
+      //   num = 10;
+
+      //   案例2
+      f1();
+      console.log(c);
+      console.log(b);
+      console.log(a);
+      function f1() {
+        var a = (b = c = 9); // 相当于：var a=9; b=9; c=9;  b、c成为全局变量 a局部变量
+        // 想要一次性声明多个变量 应该这样写： var a=9,b=9,c=9;  用逗号隔开
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+      // 执行步骤相当于：
+      function f1() {
+        var a;
+        a = 9;
+        b = 9;
+        c = 9;
+        console.log(a); // 9
+        console.log(b); // 9
+        console.log(c); // 9
+      }
+      f1();
+      console.log(c); // 9  // 因为b、c未定义就赋值，成为了全局变量
+      console.log(b); // 9
+      console.log(a); // 报错  因为a是局部变量
+    </script>
+  </head>
+  <body></body>
+</html>
