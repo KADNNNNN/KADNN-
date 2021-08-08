@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>显示与隐藏文本框内容</title>
+    <style>
+      input {
+        display: inline-block;
+        /* margin: 50px auto; */
+        outline: none;
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" value="请输入关键词" /><button>搜索</button>
+    <!-- 修改样式属性 -->
+    <script>
+      // 1.获取元素
+      var input = document.querySelector("input");
+      // 2. 注册事件  处理程序
+      // 要求：点击输入框是，框中的提示内容小时，离开文本框时提示内容出现（失去焦点）
+      // 1）获得焦点时
+      input.onfocus = function () {
+        // 判断当前输入框中 用户是否输入了不同的内容，输入了的话，失去焦点时不会恢复默认值
+        if (this.value === "请输入关键词") {
+          this.value = "";
+        }
+        input.style.color = "#333";
+      };
+      // 2）失去焦点时
+      input.onblur = function () {
+        // 判断输入框中是否为空，为空时恢复原本默认值
+        if (this.value === "") {
+          this.value = "请输入关键词";
+        }
+        // 失去焦点 颜色变回原来的灰色
+        input.style.color = "#999";
+      };
+    </script>
+  </body>
+</html>

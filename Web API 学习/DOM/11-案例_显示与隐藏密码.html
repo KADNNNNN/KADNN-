@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>显示与隐藏密码</title>
+    <style>
+      * {
+        padding: 0;
+        font-style: normal;
+      }
+      @font-face {
+        font-family: "iconfont";
+        src: url("../字体图标/iconfont.ttf") format("truetype");
+      }
+      #eyes {
+        font-family: "iconfont";
+        border: 0;
+        background-color: #fff;
+      }
+      body > div {
+        margin: 0 auto;
+        width: 500px;
+        border-bottom: 1px solid #ccc;
+      }
+      input {
+        height: 50px;
+        border: 0;
+        outline: none;
+      }
+      button,
+      em,
+      i {
+        line-height: 50px;
+        float: left;
+      }
+      div > div {
+        display: inline;
+        float: right;
+        line-height: 50px;
+      }
+      button {
+        font-size: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <input type="string" value="请输入您的用户名或账号" />
+    </div>
+    <div>
+      <input id="psw" type="password" value="请输入密码" />
+      <div>
+        <button id="eyes">&#xe689;</button>
+        <em>|</em>
+        <i>忘记密码</i>
+      </div>
+    </div>
+    <script>
+      // 要求：点击眼睛按钮 显示密码
+      // 1）获取元素
+      var btn = document.querySelector("button");
+      var inp = document.getElementById("psw");
+      console.log(inp);
+      // 2）注册事件 处理程序
+      var flag = 0; // 用于判断鼠标点击次数  方便实现切换
+      btn.onclick = function () {
+        if (flag == 0) {
+          inp.type = "string";
+          btn.innerHTML = "&#xe629;";
+          flag = 1;
+        } else {
+          inp.type = "password";
+          btn.innerHTML = "&#xe689;";
+          flag = 0;
+        }
+      };
+    </script>
+  </body>
+</html>

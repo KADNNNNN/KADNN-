@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>排他思想</title>
+  </head>
+  <body>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <button>按钮</button>
+    <!-- 要求：点击哪个按钮，哪个按钮的背景颜色就发生变化，其他的恢复原色 -->
+    <script>
+      // 1.获取元素
+      var btn = document.getElementsByTagName("button"); // 注意这种方法获取到的是伪数组，后面要用的时候要指定具体其中哪一个，才可以使用
+      // 2. 注册事件  3. 处理程序
+      // for 循环遍历所有button，给他们都绑定事件，并修改属性（批量处理） ** 前提是获得所有的元素的一个伪数组**
+      for (var i = 0; i < btn.length; i++) {
+        btn[i].onclick = function () {
+          // 排他思想1 ：首先将所有元素的背景颜色去掉
+          for (var j = 0; j < btn.length; j++) {
+            btn[j].style.backgroundColor = "";
+          }
+          // 排他思想2 ：然后给自己加上背景颜色
+          this.style.backgroundColor = "pink";
+        };
+      }
+    </script>
+  </body>
+</html>

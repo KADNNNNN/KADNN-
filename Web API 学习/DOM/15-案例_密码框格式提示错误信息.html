@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <title>案例_密码框格式提示错误信息(简单版）</title>
+    <style>
+      ul > li {
+        display: block;
+        margin: 0 auto;
+      }
+      li > span > i {
+        /* display: none; */
+        font-style: normal;
+        padding-left: 20px;
+      }
+      .right {
+        background: url(../img/√.png) no-repeat;
+        background-position: 0 1px;
+        background-size: 18px 18px;
+      }
+      .error {
+        background: url(../img/矩形8.png) no-repeat;
+        background-position: 0 1px;
+        background-size: 18px 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 设置密码表单 -->
+    <form>
+      <ul>
+        <li>
+          <label for=""> 设置密码：</label>
+          <input type="password" name="psw" class="psw input" />
+          <span>
+            <!-- <img src="../img/√.png" alt="" /> -->
+            <i>请输入一个6-16位的密码！</i>
+          </span>
+        </li>
+      </ul>
+    </form>
+    <!--  修改样式属性 -->
+    <script>
+      // 1. 获取元素
+      var input = document.querySelector("input");
+      var span = document.querySelector("span");
+      var i = document.querySelector("i");
+      // 2.注册事件  处理程序 (input框失去焦点时，检查内容是否符合要求)
+      input.onblur = function () {
+        // 检查输入的密码是否符合要求
+        if (input.value.length < 6 || input.value.length > 16) {
+          i.innerHTML = "格式错误，请输入6-16位密码！";
+          span.className = "error";
+        } else {
+          i.innerHTML = "格式正确！";
+          span.className = "right";
+        }
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>表单全选与取消全选</title>
+	<style>
+		table {
+			/*  去除表格自带边框 */
+			border-collapse: collapse;  
+		}
+			thead {
+			background-color:rgb(45, 167, 238);
+		}
+		th {
+			padding: 5px 10px;
+			border-right: 1px solid #fff;
+			border-left: 1px solid #fff;
+		}
+		 td {
+			   padding: 5px 10px
+			border: 1px solid #ccc;
+		}
+	</style>
+</head>
+<body>
+	<table>
+		<thead>
+		  <th>全选<input type="checkbox"></th>
+		  <th>商品名</th>
+		  <th>单价</th>
+		</thead>
+		<tbody>
+		  <tr>
+			<td><input type="checkbox"></td>
+			<td>苹果</td>
+			<td>1.079</td>
+		  </tr>
+		  <tr>
+			<td><input type="checkbox"></td>
+			<td>香蕉</td>
+			<td>1.079</td>
+		  </tr>
+		  <tr>
+			<td><input type="checkbox"> </td>
+			<td>葡萄</td>
+			<td>1.079</td>
+		  </tr>
+		</tbody>
+		<!-- 设置全选与去取消全选 -->
+		<script>
+			// 1. 获取元素（全选框 与 单选框）
+			var checkboxAll = document.querySelector('thead').querySelector('input');
+			var checkboxPer = document.querySelector('tbody').getElementsByTagName('input');
+			// 2. 注册事件 处理程序
+			// 1） 全选与取消全选
+			checkboxAll.onclick = function(){
+				// 思路：让所有单独选框的选定状态=全选框的选定状态
+					for(var i = 0;i<checkboxPer.length;i++){
+						checkboxPer[i].checked = this.checked;
+					}
+				// console.log(this.checked);
+			}
+			// 2）当单独选框全部选定后，全选框自动选定；当单独选框有一个没有被选定时，全选框自动去除；
+			// 批量注册
+			for(var i = 0; i<checkboxPer.length;i++) {
+				
+				checkboxPer[i].onclick = function(){
+					// 每次点击时 声明一个flag 变量，这个变量用于控制全选按钮是否被选中
+					// 每次点击时，对其他选框做出判断，若有框没被选中，则给flag赋值false
+					// 最后将flag赋值给全选框
+					flag = true;
+					// 每点击一个框，检查所有单独选框的选定状态，如果都被选中，则全选框选中，如果有一个没选，则全选框不选中
+					for(var j = 0; j<checkboxPer.length;j++){
+						if(!checkboxPer[j].checked) {   // 取反
+							flag = false;
+							break;  // 退出循环 提高效率
+ 						}
+					}
+					checkboxAll.checked = flag;
+				}
+			}
+		</script>
+</body>
+</html>

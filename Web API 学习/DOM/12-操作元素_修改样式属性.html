@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>修改样式属性</title>
+    <style>
+      div {
+        width: 400px;
+        height: 400px;
+        background-color: powderblue;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <!-- 修改样式属性 -->
+    <script>
+      // 1.获取元素
+      var div = document.querySelector("div");
+      // 2.注册事件 处理程序  （点击后改变背景颜色）
+      div.onclick = function () {
+        div.style.backgroundColor = "plum";
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过标签名获取页面元素</title>
+  </head>
+  <body>
+    <ul>
+      <li>大聪明1</li>
+      <li>大聪明2</li>
+    </ul>
+    <ol>
+      <li>大聪明1</li>
+      <li>大聪明2</li>
+    </ol>
+    <script>
+      // 获取指定标签名的所有元素
+      var lis = document.getElementsByTagName("li");
+      console.log(lis); // [li, li, li, li, li]  返回伪数组
+      console.log(lis[0]);
+      //   // 采取遍历的方式，依次打印里面的元素对象
+      //   for (var i = 0; i < lis.length; i++) {
+      //     console.log(lis[i]);
+      //   }
+      // 获取指定父元素下的指定标签名的所有元素
+      var ol = document.getElementsByTagName("ol");
+      var lis2 = ol[0].getElementsByTagName("li"); // [li, li]
+      console.log(lis2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>上午好~</p>
+    <img src="../img/早上好.jpeg" alt="" />
+    <script>
+      // 获取元素
+      var p = document.getElementsByTagName("p");
+      var img = document.getElementsByTagName("img");
+      // 获取时间元素
+      var date = new Date();
+      var h = date.getHours();
+      console.log(h);
+      // 事件处理程序
+      if (h < 5) {
+        p.innerHTML = "上午好~";
+        img.src = "../img/早上好.jpeg";
+      } else if (h < 12) {
+        p.innerHTML = "凌晨好~";
+        img.src = "../img/路飞.jpeg";
+      } else if (h < 18) {
+        p.innerHTML = "下午好~";
+        img.src = "../img/下午哈.jpeg";
+      } else {
+        p.innerHTML = "晚上好~";
+        img.src = "../img/晚上好.jpeg";
+      }
+    </script>
+  </body>
+</html>

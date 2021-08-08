@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>关闭二维码（关闭广告）</title>
+    <style>
+      div {
+        display: block;
+        position: relative;
+        height: 200px;
+        width: 200px;
+        margin: 50px auto;
+      }
+      img {
+        /* height: 100%; */
+        width: 100%;
+      }
+      span {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        height: 20px;
+        width: 20px;
+        line-height: 20px;
+        text-align: center;
+        color: red;
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src="../img/索隆.jpeg" title="我是广告索隆" />
+      <span>×</span>
+      <!-- 修改样式属性 -->
+      <script>
+        //   1） 获取元素
+        var span = document.querySelector("span");
+        var div = document.querySelector("div");
+        //   2） 注册事件 处理程序
+        span.onclick = function () {
+          div.style.display = "none";
+        };
+      </script>
+    </div>
+  </body>
+</html>

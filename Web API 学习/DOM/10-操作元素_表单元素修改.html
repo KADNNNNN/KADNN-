@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表单元素修改</title>
+  </head>
+  <body>
+    <button>按钮</button>
+    <form>
+      <input type="string" value="请输入查询内容" />
+      <script>
+        //   要求1、点击按钮，输入框中内容发生变化
+        // 1）、获取元素
+        var btn = document.querySelector("button"); // 这里不能使用 getElementsByTagName,会得不到结果，我也不知道为什么(是因为返回的是伪数组所以不能调用吗？)
+        var inp = document.querySelector("input");
+        console.log(inp);
+        // 2）、注册事件  处理程序
+        btn.onclick = function () {
+          inp.value = "被点击了";
+          // 要求2、按钮点击一次后禁用  （使按钮只能提交一次）
+
+          //   btn.disabled = true;  // 方法1
+          this.disabled = true; // 方法2  (常用)  this 指向事件函数的调用者
+        };
+      </script>
+    </form>
+  </body>
+</html>

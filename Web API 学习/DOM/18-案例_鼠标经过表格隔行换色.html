@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>鼠标经过行内换色</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      table {
+        display: block;
+        width: 800px;
+        margin: 50px auto;
+        text-align: center;
+        border: 0;
+        border-collapse: collapse;
+      }
+      thead {
+        background-color: rgb(166, 198, 255);
+      }
+      th {
+        padding: 5px 25px;
+        border: 0;
+      }
+      td {
+        padding: 1px 0;
+      }
+      tbody {
+        background-color: rgb(211, 225, 250);
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <th>代码</th>
+        <th>名称</th>
+        <th>最新公布净值</th>
+        <th>累计净值</th>
+        <th>前单位净值</th>
+        <th>净增长率</th>
+      </thead>
+      <tbody>
+        <tr>
+          <td>03526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td>03526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td>03526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+        <tr>
+          <td>03526</td>
+          <td>农银金穗3个月定期开放债券</td>
+          <td>1.075</td>
+          <td>1.079</td>
+          <td>1.074</td>
+          <td>+0.047%</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      // 获取对象
+      var tr = document.querySelector("tbody").getElementsByTagName("tr");
+      // 批量注册  处理程序
+      // 鼠标经过表格行内
+      for (var i = 0; i < tr.length; i++) {
+        tr[i].onmouseover = function () {
+          this.style.backgroundColor = "rgb(166, 198, 255)";
+        };
+      }
+      // 鼠标离开表格行内
+      for (var i = 0; i < tr.length; i++) {
+        tr[i].onmouseout = function () {
+          this.style.backgroundColor = " rgb(211, 225, 250)";
+        };
+      }
+    </script>
+  </body>
+</html>

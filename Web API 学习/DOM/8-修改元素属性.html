@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>修改元素属性</title>
+    <style>
+      img {
+        display: block;
+        height: 300px;
+        /* width: 300px; */
+      }
+    </style>
+  </head>
+  <body>
+    <button id="lf">路飞</button>
+    <button id="sl">索隆</button>
+    <img src="../img/路飞.jpeg" alt="" title="路飞" />
+
+    <script>
+      // 获取元素
+      var lf = document.getElementById("lf");
+      var sl = document.getElementById("sl");
+      var img = document.querySelector("img");
+      lf.onclick = function () {
+        img.src = "../img/路飞.jpeg";
+        img.title = "路飞";
+      };
+      sl.onclick = function () {
+        img.src = "../img/索隆.jpeg";
+        img.title = "索隆";
+      };
+    </script>
+  </body>
+</html>
